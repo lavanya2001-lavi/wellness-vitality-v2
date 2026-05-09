@@ -120,14 +120,11 @@ const Hero = () => {
 
           </div>
 
-          {/* ADJUSTED SPACING ON MOBILE */}
-          <div className="h-[180px] sm:h-[220px] lg:hidden"></div>
-
         </div>
       </div>
 
       {/* HERO IMAGE */}
-      <div className="absolute right-0 lg:right-[7%] bottom-0 lg:bottom-3 w-full lg:w-[50%] h-[400px] sm:h-[500px] lg:h-[95%] flex items-end justify-center lg:justify-end pointer-events-none z-0">
+      <div className="hidden lg:flex absolute right-0 lg:right-[7%] bottom-0 lg:bottom-3 w-full lg:w-[50%] h-[400px] sm:h-[500px] lg:h-[95%] items-end justify-center lg:justify-end pointer-events-none z-0">
         <Image
           src={HeroImage}
           alt="Healthcare Professionals"

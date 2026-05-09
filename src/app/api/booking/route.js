@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+// Initialize Resend with API Key
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
   try {
@@ -14,17 +17,6 @@ export async function POST(request) {
       total = 0 
     } = data;
 
-    // Build standard nodemailer transporter using Environment Variables
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.gmail.com',
-      port: process.env.SMTP_PORT || 587,
-      secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
-      },
-    });
-
     // Formatting selections
     const packagesHtml = selectedPackages.length > 0 
       ? selectedPackages.map(pkg => `<li><b>${pkg.name}</b> - $${pkg.price}</li>`).join('') 
@@ -34,6 +26,8 @@ export async function POST(request) {
     const addressStr = isTeleconsultation 
       ? 'Teleconsultation (Online Link to be Sent)' 
       : (userDetails.address || 'Mobile Visit - Address to be confirmed');
+
+    const fromEmail = 'Wellness Vitality <onboarding@resend.dev>'; // Update with verified domain
 
     // 1. Admin Email HTML
     const adminHtml = `
@@ -77,34 +71,31 @@ export async function POST(request) {
       <p>Warm Regards,<br><b>The Wellness Vitality Clinical Team</b></p>
     `;
 
-    // Try sending (If ENV variables are missing, this might fail, so we catch nicely)
-    try {
-      if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-        console.warn('⚠️ SMTP variables missing. Simulated successful send for development.');
-        console.log('--- ADMIN EMAIL SIMULATION ---', adminHtml);
-        console.log('--- USER EMAIL SIMULATION ---', userHtml);
-      } else {
-        // Send Admin Email
-        await transporter.sendMail({
-          from: `"Wellness Vitality Booking" <${process.env.SMTP_USER}>`,
-          to: 'lavanya@italliancetech.com',
-          subject: `New Booking - ${userDetails.name}`,
-          html: adminHtml,
-        });
+    // Send Admin Email
+    const adminResponse = await resend.emails.send({
+      from: fromEmail,
+      to: 'lavanya@italliancetech.com',
+      subject: `New Booking - ${userDetails.name}`,
+      html: adminHtml,
+    });
 
-        // Send User Email
-        if (userDetails.email) {
-          await transporter.sendMail({
-            from: `"Wellness Vitality Support" <${process.env.SMTP_USER}>`,
-            to: userDetails.email,
-            subject: `Your Wellness Vitality Booking Itinerary`,
-            html: userHtml,
-          });
-        }
+    if (adminResponse.error) {
+      console.error('Resend Admin Booking Error:', adminResponse.error);
+      throw new Error('Failed to send admin notification');
+    }
+
+    // Send User Email
+    if (userDetails.email) {
+      const userResponse = await resend.emails.send({
+        from: fromEmail,
+        to: userDetails.email,
+        subject: `Your Wellness Vitality Booking Itinerary`,
+        html: userHtml,
+      });
+
+      if (userResponse.error) {
+        console.warn('Resend User Booking Error (Non-critical):', userResponse.error);
       }
-    } catch (sendError) {
-      console.error('Nodemailer Error:', sendError);
-      return NextResponse.json({ success: false, error: 'Failed to dispatch email' }, { status: 500 });
     }
 
     return NextResponse.json({ success: true });

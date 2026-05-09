@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+// Initialize Resend with API Key
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request) {
   try {
@@ -10,16 +13,7 @@ export async function POST(request) {
       return NextResponse.json({ success: false, error: 'Email is required' }, { status: 400 });
     }
 
-    // Build standard nodemailer transporter using Environment Variables
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.gmail.com',
-      port: process.env.SMTP_PORT || 587,
-      secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
-      auth: {
-        user: process.env.EMAIL_USER || process.env.SMTP_USER,
-        pass: process.env.EMAIL_PASS || process.env.SMTP_PASS,
-      },
-    });
+    const fromEmail = 'Wellness Vitality <onboarding@resend.dev>'; // Update with verified domain
 
     // Admin Email HTML
     const adminHtml = `
@@ -32,27 +26,17 @@ export async function POST(request) {
       <p>Date: ${new Date().toLocaleString()}</p>
     `;
 
-    // Try sending (If ENV variables are missing, this might fail, so we catch nicely)
-    try {
-      const authUser = process.env.EMAIL_USER || process.env.SMTP_USER;
-      const authPass = process.env.EMAIL_PASS || process.env.SMTP_PASS;
+    // Send Admin Email
+    const adminResponse = await resend.emails.send({
+      from: fromEmail,
+      to: 'lavanya@italliancetech.com',
+      subject: `New Newsletter Subscriber - ${email}`,
+      html: adminHtml,
+    });
 
-      if (!authUser || !authPass) {
-        console.warn('⚠️ SMTP variables missing. Simulated successful send for development.');
-        console.log('--- ADMIN EMAIL SIMULATION ---', adminHtml);
-      } else {
-        // Send Admin Email
-        await transporter.sendMail({
-          from: `"Wellness Vitality Newsletter" <${authUser}>`,
-          to: 'lavanya@italliancetech.com',
-          subject: `New Newsletter Subscriber - ${email}`,
-          html: adminHtml,
-        });
-
-      }
-    } catch (sendError) {
-      console.error('Nodemailer Error:', sendError);
-      return NextResponse.json({ success: false, error: 'Failed to subscribe. Please try again.' }, { status: 500 });
+    if (adminResponse.error) {
+      console.error('Resend Newsletter Error:', adminResponse.error);
+      throw new Error('Failed to notify admin of subscription');
     }
 
     return NextResponse.json({ success: true, message: 'Successfully subscribed to the newsletter!' });
