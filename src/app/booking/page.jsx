@@ -208,7 +208,7 @@ const NURSES = [
   },
   {
     id: 'elias',
-    name: 'Registered Nurse Elias Roumie',
+    name: 'Registered Nurse Roumie Elias',
     image: NurseEliasImage,
     // desc: 'Registered Nurse specialising in clinical health assessments and health & wellness support.'
   }
