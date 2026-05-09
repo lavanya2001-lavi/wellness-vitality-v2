@@ -151,18 +151,6 @@ const Footer = () => {
                     <a href="mailto:admin@wellnessvitalityaustralia.com.au" className="font-bold text-white hover:text-[#ca1254] transition-colors break-all">admin@wellnessvitalityaustralia.com.au</a>
                   </div>
                 </li>
-                <li className="flex gap-4 text-white/60 text-sm items-start group">
-                  <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-[#ca1254]/20 transition-colors">
-                    <svg className="w-4 h-4 text-[#ca1254] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                  </div>
-                  <div className="pt-1.5 flex flex-col">
-                    <span className="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-1">Clinical Suites</span>
-                    <span className="text-white/80 font-medium leading-relaxed">
-                      Suite 226, 2–8 Brookhollow Avenue <br />
-                      Norwest NSW 2153
-                    </span>
-                  </div>
-                </li>
               </ul>
             </FooterSection>
           </div>

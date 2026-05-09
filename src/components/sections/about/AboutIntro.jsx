@@ -29,7 +29,7 @@ const AboutIntro = () => {
             <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-lg px-6 py-4 border border-gray-100">
               <p className="text-sm text-gray-500">Trusted Care</p>
               <p className="text-lg font-semibold text-[#3b3f69]">
-                AHPRA Registered Nurses
+                Registered Nurses
               </p>
             </div>
           </div>
@@ -50,7 +50,7 @@ const AboutIntro = () => {
               Personalised Healthcare,
               <br />
               <span className="text-[#ca1254] font-medium">
-                Delivered With Care
+                Centred Around You
               </span>
             </h2>
 
@@ -62,9 +62,9 @@ const AboutIntro = () => {
                 focused on personalised treatments and evidence-based care.
               </p>
               <p>
-                Whether in clinic or through our mobile services, we ensure you
-                receive high-quality care in the comfort of your home,
-                workplace, aged care facility or NDIS residence.
+                Through our mobile services, we ensure you receive high-quality 
+                care in the comfort of your home, workplace, aged care 
+                facility or NDIS residence.
               </p>
             </div>
 

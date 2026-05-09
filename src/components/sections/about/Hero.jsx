@@ -25,7 +25,7 @@ const Hero = () => {
 
         {/* Description */}
         <p className="text-lg !text-white w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 leading-relaxed font-light">
-          Wellness Vitality Australia provides professional healthcare and wellness services designed to support energy, recovery, immune health and overall wellbeing.
+          Personalised healthcare centred around you.
         </p>
 
         {/* Divider */}

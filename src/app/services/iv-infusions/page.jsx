@@ -5,7 +5,7 @@ import ServiceCTA from '@/components/sections/services/ServiceCTA';
 import FeatureCards from '@/components/ui/FeatureCards';
 import IvInfusionImage from '../../../../public/images/services/iv-infusion.png';
 
-const treatments = [
+const therapies = [
   { name: 'Immune Defence IV', price: '$260', desc: 'High-dose vitamin C, zinc, and immune-supporting nutrients.' },
   { name: 'Energy & Performance IV', price: '$240', desc: 'B-complex vitamins and amino acids for sustained energy.' },
   { name: 'Beauty & Skin Glow IV', price: '$320', desc: 'Glutathione, biotin, and collagen-boosting nutrients.' },
@@ -26,7 +26,7 @@ const nutrients = [
   { name: 'Taurine', desc: 'Supports cardiovascular health and cellular hydration.', accent: 'navy' },
   { name: 'Arginine', desc: 'Boosts nitric oxide for circulation and recovery.', accent: 'rose' },
   { name: 'Glutamine', desc: 'Gut lining repair and immune system fuel source.', accent: 'navy' },
-  { name: 'Lysine', desc: 'Collagen synthesis and antiviral immune defence.', accent: 'rose' },
+  { name: 'Lysine', desc: 'Collagen synthesis and immune support.', accent: 'rose' },
   { name: 'Ornithine', desc: 'Supports detoxification and growth hormone release.', accent: 'navy' },
   { name: 'Glutathione', desc: 'Master antioxidant for liver detox and skin brightening.', accent: 'rose' },
   { name: 'Coenzyme Q10', desc: 'Vital cellular energy coenzyme powering repair and metabolism.', accent: 'navy' },
@@ -116,10 +116,13 @@ export default function IVInfusionsPage() {
 
         /* ── About ── */
         .about-section {
-          padding: 96px 0;
+          padding: 48px 0;
           background: #fafafa;
           position: relative;
           overflow: hidden;
+        }
+        @media (min-width: 768px) {
+          .about-section { padding: 96px 0; }
         }
         .about-section::before {
           content: '';
@@ -151,13 +154,20 @@ export default function IVInfusionsPage() {
         }
         .stat-pill {
           position: absolute;
-          bottom: 28px; left: -20px;
+          bottom: 16px; left: 12px;
           background: #fff;
           border-radius: 14px;
-          padding: 14px 20px;
+          padding: 10px 14px;
           box-shadow: 0 8px 32px rgba(59,63,105,0.15);
-          display: flex; align-items: center; gap: 12px;
+          display: flex; align-items: center; gap: 10px;
           z-index: 10;
+        }
+        @media (min-width: 768px) {
+          .stat-pill {
+            bottom: 28px; left: -20px;
+            padding: 14px 20px;
+            gap: 12px;
+          }
         }
         .stat-num {
           font-family: 'Cormorant Garamond', serif;
@@ -299,9 +309,12 @@ export default function IVInfusionsPage() {
 
         /* ── Benefits Atmospheric Redesign ── */
         .benefits-section {
-          padding: 120px 0;
+          padding: 64px 0;
           background: linear-gradient(160deg, #f8fafc 0%, #eef2f8 100%);
           position: relative; overflow: hidden;
+        }
+        @media (min-width: 768px) {
+          .benefits-section { padding: 120px 0; }
         }
         .benefits-section::before {
           content: '';
@@ -333,14 +346,18 @@ export default function IVInfusionsPage() {
         .stat-block {
           background: rgba(255, 255, 255, 0.7);
           backdrop-filter: blur(12px);
-          border-radius: 24px;
+          border-radius: 20px;
           border: 1px solid rgba(255, 255, 255, 0.4);
           display: flex; flex-direction: column;
           align-items: center; justify-content: center;
-          text-align: center; padding: 40px 24px;
+          text-align: center; padding: 24px 16px;
           transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
           box-shadow: 0 10px 30px -10px rgba(59, 63, 105, 0.08);
           position: relative;
+          overflow: hidden;
+        }
+        @media (min-width: 768px) {
+          .stat-block { padding: 40px 24px; border-radius: 24px; }
         }
         .stat-block:hover {
           transform: translateY(-8px) scale(1.02);
@@ -410,9 +427,9 @@ export default function IVInfusionsPage() {
         {/* ── About / Image ── */}
         <section className="about-section">
           <div className="page-container">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[72px] items-center">
               {/* Image */}
-              <div style={{ position: 'relative' }}>
+              <div className="order-first md:order-none relative">
                 <div className="about-image-wrap">
                   <Image
                     src={IvInfusionImage}
@@ -435,19 +452,19 @@ export default function IVInfusionsPage() {
                   <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
                 </div>
                 <h2 className="section-title" style={{ fontSize: 'clamp(36px, 4vw, 52px)', marginBottom: '24px' }}>
-                  Fast-Acting Results Through{' '}
-                  <em style={{ color: '#ca1254', fontStyle: 'italic' }}>Direct Absorption</em>
+                  Restorative Nutrient Infusions from{' '}
+                  <em style={{ color: '#ca1254', fontStyle: 'italic' }}>$220</em>
                 </h2>
                 <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#6b7280', fontWeight: 300, marginBottom: '32px', maxWidth: '440px' }}>
                   IV infusion therapy bypasses the digestive system entirely, delivering essential vitamins, minerals, and nutrients directly into the bloodstream for 100% bioavailability and faster results.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                <div className="grid grid-cols-2 gap-3 mb-8">
                   <div className="stat-card">
                     <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '32px', fontWeight: 600, color: '#3b3f69', lineHeight: 1, marginBottom: '6px' }}>100%</div>
                     <div style={{ fontSize: '10px', color: 'rgba(59,63,105,0.5)', textTransform: 'uppercase', letterSpacing: '0.18em', fontWeight: 600 }}>Absorption</div>
                   </div>
                   <div className="stat-card">
-                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '32px', fontWeight: 600, color: '#ca1254', lineHeight: 1, marginBottom: '6px' }}>AHPRA</div>
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '32px', fontWeight: 600, color: '#ca1254', lineHeight: 1, marginBottom: '6px' }}>Qualified</div>
                     <div style={{ fontSize: '10px', color: 'rgba(202,18,84,0.5)', textTransform: 'uppercase', letterSpacing: '0.18em', fontWeight: 600 }}>Registered Nurses</div>
                   </div>
                 </div>
@@ -523,15 +540,15 @@ export default function IVInfusionsPage() {
             <div style={{ textAlign: 'center', marginBottom: '56px' }}>
               <div className="eyebrow" style={{ color: '#ca1254', justifyContent: 'center' }}>
                 <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
-                Treatments & Pricing
+                Therapies & Pricing
                 <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
               </div>
               <h2 className="section-title" style={{ fontSize: 'clamp(32px, 3.5vw, 44px)', margin: 0 }}>
-                IV Infusion Treatments
+                IV Infusion Therapies
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
-              {treatments.map((t) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {therapies.map((t) => (
                 <div key={t.name} className="treatment-card">
                   <div>
                     <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#3b3f69', marginBottom: '10px', lineHeight: '1.35' }}>{t.name}</h3>
@@ -548,26 +565,36 @@ export default function IVInfusionsPage() {
         </section>
 
         {/* ── Custom Drips CTA ── */}
-        <section className="py-10 md:py-12 bg-[#ca1254] relative overflow-hidden">
+        <section className="py-12 md:py-16 bg-[#ca1254] relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none opacity-10">
             <div className="absolute top-0 right-0 w-1/3 h-full bg-white -skew-x-12 translate-x-1/2" />
           </div>
-          <div className="container relative z-10" style={{ textAlign: 'center' }}>
+          <div className="w-full max-w-4xl mx-auto px-6 relative z-10 text-center">
             <div className="eyebrow" style={{ color: '#fff', justifyContent: 'center' }}>
               <span className="eyebrow-line" style={{ background: '#fff', opacity: 0.4 }} />
               Personalised Therapy
               <span className="eyebrow-line" style={{ background: '#fff', opacity: 0.4 }} />
             </div>
-            <h2 className="section-title text-white" style={{ fontSize: 'clamp(28px, 3.5vw, 36px)', marginBottom: '12px' }}>
+            <h2 className="section-title text-white" style={{ fontSize: 'clamp(28px, 3.5vw, 36px)', marginBottom: '16px' }}>
               Looking for Custom IV Drips?
             </h2>
-            <p style={{ fontSize: '15.5px', color: 'rgba(255,255,255,0.85)', fontWeight: 300, marginBottom: '24px', maxWidth: '520px', margin: '0 auto 24px' }}>
+            <p style={{ fontSize: '15.5px', color: 'rgba(255,255,255,0.85)', fontWeight: 300, marginBottom: '32px', maxWidth: '520px', margin: '0 auto 32px' }}>
               Explore personalised IV formulations and flexible pricing options tailored to your needs.
             </p>
             <a
               href="/custom-iv-drips"
-              className="inline-block px-8 py-3.5 rounded-md bg-white text-[#ca1254] font-bold text-sm hover:shadow-lg transition hover:-translate-y-0.5 shadow-sm"
-              style={{ minWidth: '220px' }}
+              className="
+                inline-block 
+                px-10 py-4 
+                rounded-xl 
+                bg-white text-[#ca1254] 
+                font-bold text-sm 
+                shadow-lg shadow-black/10
+                hover:shadow-xl hover:-translate-y-0.5 
+                transition-all duration-300
+                w-full sm:w-auto
+                min-w-[240px]
+              "
             >
               View Custom IV Drips
             </a>
@@ -587,7 +614,7 @@ export default function IVInfusionsPage() {
                 How It Works
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {steps.map((step, i) => (
                 <div key={step.title} className="step-card">
                   <div className="step-bg-num">{String(i + 1).padStart(2, '0')}</div>
@@ -603,7 +630,7 @@ export default function IVInfusionsPage() {
         {/* ── Clinical Benefits ── */}
         <section className="benefits-section">
           <div className="page-container" style={{ position: 'relative', zIndex: 1 }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 1fr)', gap: '80px', alignItems: 'center' }}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
               
               {/* Left Column: Benefits */}
               <div>
@@ -612,9 +639,9 @@ export default function IVInfusionsPage() {
                   Clinical Advantages
                 </div>
                 <h2 className="section-title" style={{ fontSize: 'clamp(34px, 4.5vw, 54px)', color: '#3b3f69', marginBottom: '36px' }}>
-                  How IV Therapy <br /><em style={{ color: '#ca1254', fontStyle: 'italic' }}>Supports Your Body</em>
+                  How IV Therapy <br /><em style={{ color: '#ca1254', fontStyle: 'italic' }}>Supports Your Wellness</em>
                 </h2>
-                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                <div className="flex flex-col">
                   {[
                     { t: 'Direct Bioavailability', d: 'Nutrients bypass the digestive system for immediate 100% absorption.' },
                     { t: 'Rapid Rehydration', d: 'Instantly restores fluid balance and essential electrolytes at a cellular level.' },
@@ -636,7 +663,7 @@ export default function IVInfusionsPage() {
               </div>
 
               {/* Right Column: Stats Grid */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+              <div className="grid grid-cols-2 gap-4">
                 {[
                   { 
                     val: '60m', 
@@ -663,7 +690,7 @@ export default function IVInfusionsPage() {
                     <div className="stat-icon-wrap">
                       {s.icon}
                     </div>
-                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '36px', fontWeight: 600, color: '#3b3f69', lineHeight: 1, marginBottom: '8px' }}>{s.val}</div>
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(24px, 5vw, 36px)', fontWeight: 600, color: '#3b3f69', lineHeight: 1, marginBottom: '8px', wordBreak: 'break-word' }}>{s.val}</div>
                     <div style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(59,63,105,0.45)', textTransform: 'uppercase', letterSpacing: '0.18em', lineHeight: '1.4' }}>{s.label}</div>
                   </div>
                 ))}
@@ -700,7 +727,7 @@ export default function IVInfusionsPage() {
                 </h2>
 
                 <p className="text-sm sm:text-base text-white/80 max-w-xl">
-                  Book your IV infusion through our secure booking system. Calendly booking. Afterpay payment.
+                  Book your IV infusion through our secure booking system.
                 </p>
               </div>
 

@@ -84,7 +84,7 @@ export default function ContactPage() {
           </h1>
 
           <p className="text-xl !text-white max-w-3xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 leading-relaxed font-light mb-8">
-            Our clinical team is here to help with any enquiries regarding our treatments or mobile services.
+            Our clinical team is here to help with any enquiries regarding our services or mobile visits.
           </p>
 
           <div className="mt-12 w-24 h-1.5 bg-white/10 mx-auto rounded-full overflow-hidden">
@@ -133,7 +133,7 @@ export default function ContactPage() {
                   WhatsApp Support
                 </h3>
                 <p className="text-gray-500 text-sm mb-8 leading-relaxed">
-                  Fast enquire about treatments, mobile availability, or follow-up on your booking via WhatsApp chat.
+                  Fast enquire about services, mobile availability, or follow-up on your booking via WhatsApp chat.
                 </p>
                 <Button
                   href="https://wa.me/yourwhatsappnumber"

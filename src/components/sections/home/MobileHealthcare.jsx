@@ -65,7 +65,7 @@ const IVTherapySlider = () => {
             </h2>
 
             <p className="text-white/80 mb-6 md:mb-8 max-w-md mx-auto lg:mx-0 text-sm md:text-base">
-              Professional IV treatments designed to support recovery, energy,
+              Professional IV therapies designed to support recovery, energy,
               and overall wellness delivered by qualified nurses.
             </p>
 

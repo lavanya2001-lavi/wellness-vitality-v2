@@ -54,10 +54,10 @@ const MobileConvenience = () => {
 
             <div className="space-y-6 text-lg text-gray-600 leading-relaxed font-light">
               <p>
-                We understand that attending a clinic can be challenging. Wellness Vitality Australia brings professional clinical care to you, ensuring you receive the support you need in the most convenient location.
+                We prioritize your convenience and comfort. Wellness Vitality Australia brings professional clinical care to you, ensuring you receive the support you need in the most convenient location.
               </p>
               <p>
-                Our mobile healthcare services allow patients to receive professional treatments in homes, workplaces, aged care facilities and NDIS residences.
+                Our mobile healthcare services allow patients to receive professional services in homes, workplaces, aged care facilities and NDIS residences.
               </p>
             </div>
 

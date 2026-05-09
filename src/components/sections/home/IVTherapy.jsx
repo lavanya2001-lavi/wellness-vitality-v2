@@ -70,7 +70,7 @@ const IVTherapy = () => {
   return (
     <section
       id="iv-therapy"
-      className="py-10 md:py-16 bg-white relative overflow-hidden shadow-[inset_0_4px_20px_rgba(0,0,0,0.1)]"
+      className="py-10 md:py-16 bg-[#f8f9fc] relative overflow-hidden"
     >
       <div className="w-full px-4 sm:px-6 lg:px-12 xl:px-20">
 
@@ -97,8 +97,10 @@ const IVTherapy = () => {
               key={pack.title}
               className={`
                 relative bg-white p-4 sm:p-8 
-                shadow-[0_8px_25px_rgba(0,0,0,0.08)] 
-                hover:shadow-[0_12px_35px_rgba(0,0,0,0.12)] 
+                border border-gray-100
+                shadow-[0_8px_25px_rgba(0,0,0,0.05)] 
+                hover:shadow-[0_12px_35px_rgba(0,0,0,0.1)] 
+                hover:border-[rgb(202,18,84)]/20
                 transition duration-300 
                 flex flex-col h-full w-full max-w-sm
 

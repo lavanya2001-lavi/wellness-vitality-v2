@@ -9,7 +9,7 @@ const vitaminServices = [
   'B12 injections',
   'Vitamin D injections',
   'Amino acid injections',
-  'Anti-fatigue injections',
+  'Vitality & energy injections',
 ];
 
 const lifestyleServices = [
@@ -35,7 +35,7 @@ const steps = [
 
 const wellnessFocus = [
   { title: 'Nutrient Optimisation', desc: 'Targeting specific deficiencies to enhance your daily vitality.' },
-  { title: 'Preventative Strategy', desc: 'A proactive approach to health that reduces long-term risks.' },
+  { title: 'Integrated Wellness', desc: 'A proactive approach to health that reduces long-term risks.' },
   { title: 'Personalised Wellness', desc: 'Evidence-based advice tailored to your unique lifestyle goals.' },
 ];
 
@@ -352,8 +352,8 @@ export default function PreventativeHealthPage() {
 
       <div className="ph-page">
         <ServiceHero
-          badge="Preventative Care"
-          heading="Preventative Health & Wellness"
+          badge="Health & Wellness Support"
+          heading="Integrated Health & Wellness"
           subtext="Supporting long-term health through vitamin therapies and lifestyle guidance."
           ctaLabel="Enquire Now"
           ctaHref="/contact"
@@ -364,9 +364,9 @@ export default function PreventativeHealthPage() {
         {/* ── About / Image Section ── */}
         <section className="about-section">
           <div className="page-container">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[72px] items-center">
               {/* Image */}
-              <div style={{ position: 'relative' }}>
+              <div className="relative">
                 <div className="about-image-wrap">
                   <Image
                     src={PreventativeHealthImage}
@@ -391,13 +391,13 @@ export default function PreventativeHealthPage() {
                   <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
                 </div>
                 <h2 className="section-title" style={{ fontSize: 'clamp(36px, 4vw, 52px)', marginBottom: '24px' }}>
-                  Empowering Your<br />
-                  <em style={{ color: '#ca1254', fontStyle: 'italic' }}>Best Self</em>
+                  Proactive Vitality Support from{' '}
+                  <em style={{ color: '#ca1254', fontStyle: 'italic' }}>$180</em>
                 </h2>
                 <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#6b7280', fontWeight: 300, marginBottom: '32px', maxWidth: '440px' }}>
-                  Our preventative health services focus on improving overall wellbeing through targeted vitamin support and professional lifestyle guidance. A proactive approach that starts from within.
+                  Our health & wellness services focus on improving overall wellbeing through targeted vitamin support and professional lifestyle guidance. A proactive approach that starts from within.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
                   {benefits.map((b) => (
                     <div key={b} className="benefit-tag">
                       <CheckIcon />
@@ -423,7 +423,7 @@ export default function PreventativeHealthPage() {
                 Wellness Support
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
               {/* Vitamin Card */}
               <div className="service-card">
@@ -488,7 +488,7 @@ export default function PreventativeHealthPage() {
                 Your Path to Wellness
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', position: 'relative' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
               {steps.map((step, i) => (
                 <div key={step.title} style={{ position: 'relative' }}>
                   <div className="step-card">

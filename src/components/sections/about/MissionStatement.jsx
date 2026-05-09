@@ -14,7 +14,7 @@ const pillars = [
     ),
   },
   {
-    value: 'AHPRA Nurses',
+    value: 'Registered Nurses',
     desc: 'Fully registered, experienced practitioners.',
     icon: (
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ca1254" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -66,7 +66,7 @@ const MissionStatement = () => {
                   Our<br /><span style={{ color: CRIMSON }}>Mission.</span>
                 </h2>
                 <p style={{ marginTop: 16, color: 'rgba(255,255,255,0.4)', fontSize: 13, lineHeight: 1.7 }}>
-                  Patient-centred care — every treatment uniquely tailored to individual needs.
+                  Patient-centred care — every session uniquely tailored to individual needs.
                 </p>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
@@ -98,7 +98,7 @@ const MissionStatement = () => {
                 {' '}healthcare services that support overall wellbeing for individuals, aged care clients and NDIS participants.
               </p>
               <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', fontStyle: 'italic', lineHeight: 1.7, paddingLeft: 16, borderLeft: '2px solid rgba(202,18,84,0.5)', marginBottom: 32 }}>
-                Every treatment is uniquely tailored to individual patient needs and requirements.
+                Every session is uniquely tailored to individual patient needs and requirements.
               </p>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                 {['Aged Care', 'NDIS', 'Mobile Services', 'Clinical Grade'].map((tag) => (

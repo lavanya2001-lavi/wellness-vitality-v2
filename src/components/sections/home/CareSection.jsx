@@ -19,7 +19,7 @@ const features = [
     {
         title: 'You are comfortable.',
         description:
-            'With mobile healthcare services, we bring treatments to your home, workplace or care facility, making healthcare simple and stress-free.',
+            'With mobile healthcare services, we bring clinical care to your home, workplace or care facility, making healthcare simple and stress-free.',
         icon: <House size={56} strokeWidth={1.4} />,
     },
 ];

@@ -33,7 +33,7 @@ export async function POST(request) {
     const isTeleconsultation = appointmentType?.id === 'teleconsultation';
     const addressStr = isTeleconsultation 
       ? 'Teleconsultation (Online Link to be Sent)' 
-      : (userDetails.address || 'Clinic Visit - Norwest Facility');
+      : (userDetails.address || 'Mobile Visit - Address to be confirmed');
 
     // 1. Admin Email HTML
     const adminHtml = `
@@ -51,7 +51,7 @@ export async function POST(request) {
         <li><b>Type:</b> ${appointmentType?.title || 'Not specified'}</li>
         ${!isTeleconsultation ? `<li><b>Preferred Date:</b> ${selectedDate}</li><li><b>Preferred Time:</b> ${selectedTime}</li>` : `<li><b>Note:</b> Client will book directly via Calendly link.</li>`}
       </ul>
-      <h3>Selected Treatments:</h3>
+      <h3>Selected Services:</h3>
       <ul>${packagesHtml}</ul>
       <p><b>Estimated Total Subtotal:</b> $${total}</p>
     `;
@@ -69,7 +69,7 @@ export async function POST(request) {
         <li><b>Location:</b> ${addressStr}</li>
       </ul>
 
-      <h3>Your Treatments</h3>
+      <h3>Your Services</h3>
       <ul>${packagesHtml}</ul>
       <p><b>Estimated Total:</b> $${total} (Subject to consultation & clinical variance)</p>
 
@@ -95,7 +95,7 @@ export async function POST(request) {
         // Send User Email
         if (userDetails.email) {
           await transporter.sendMail({
-            from: `"Wellness Vitality Clinics" <${process.env.SMTP_USER}>`,
+            from: `"Wellness Vitality Support" <${process.env.SMTP_USER}>`,
             to: userDetails.email,
             subject: `Your Wellness Vitality Booking Itinerary`,
             html: userHtml,

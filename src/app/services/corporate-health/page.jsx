@@ -16,9 +16,9 @@ const services = [
 
 const benefits = [
   { title: 'Promotes Employee Wellbeing', desc: 'Healthy employees are more engaged and satisfied.' },
-  { title: 'Improves Productivity', desc: 'Preventative health supports better performance at work.' },
+  { title: 'Improves Productivity', desc: 'Integrated health & wellness supports better performance at work.' },
   { title: 'Supports Workplace Safety', desc: 'Reduce risk and liability through professional health services.' },
-  { title: 'Convenient On-Site Services', desc: 'No time lost to offsite clinic visits, we come to you.' },
+  { title: 'Convenient On-Site Services', desc: 'Seamlessly integrated health support at your workplace, saving time and effort.' },
 ];
 
 const steps = [
@@ -372,14 +372,16 @@ export default function CorporateHealthPage() {
           badge="Workplace Health"
           heading="Corporate & Workplace Health Services"
           subtext="Professional healthcare services designed for organisations and workplaces."
-          ctaLabel="Enquire Now"
-          ctaHref="/contact"
+          ctaLabel="Book Now"
+          ctaHref="/booking"
+          secondaryCtaLabel="Enquire Now"
+          secondaryCtaHref="/contact"
         />
 
         {/* ── About / Image Section ── */}
         <section className="ch-about-section">
           <div className="ch-container">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[72px] items-center">
 
               {/* Text */}
               <div>
@@ -389,13 +391,13 @@ export default function CorporateHealthPage() {
                   <span className="ch-eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
                 </div>
                 <h2 className="ch-section-title" style={{ fontSize: 'clamp(36px, 4vw, 52px)', marginBottom: '24px' }}>
-                  Empowering a<br />
-                  <em style={{ color: '#ca1254', fontStyle: 'italic' }}>Healthier Workforce</em>
+                  Optimised Workplace Vitality from{' '}
+                  <em style={{ color: '#ca1254', fontStyle: 'italic' }}>$250</em>
                 </h2>
                 <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#6b7280', fontWeight: 300, marginBottom: '32px', maxWidth: '440px' }}>
                   We provide tailored healthcare services for workplaces to support employee wellbeing and ensure a healthier work environment. Our on-site model minimises disruption while maximising health outcomes for your organisation.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
                   {benefits.slice(0, 4).map((b) => (
                     <div key={b.title} className="ch-benefit-tag">
                       <CheckIcon />
@@ -406,7 +408,7 @@ export default function CorporateHealthPage() {
               </div>
 
               {/* Image */}
-              <div style={{ position: 'relative' }}>
+              <div className="order-first md:order-none relative">
                 <div className="ch-about-image-wrap">
                   <Image
                     src={CorporateHealthImage}
@@ -440,7 +442,7 @@ export default function CorporateHealthPage() {
                 Our Workplace Solutions
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {services.map((s, i) => (
                 <div key={s.name} className="ch-service-card">
                   <div className="ch-service-badge">{String(i + 1).padStart(2, '0')}</div>
@@ -467,7 +469,7 @@ export default function CorporateHealthPage() {
                 The Implementation Path
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px', position: 'relative' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
               {steps.map((step, i) => (
                 <div key={step.title} style={{ position: 'relative' }}>
                   <div className="ch-step-card">
@@ -515,7 +517,7 @@ export default function CorporateHealthPage() {
                 Why Partner With Us?
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {corporateBenefits.map((item, i) => {
                 const icons = [
                   <svg key="0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ca1254" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -544,57 +546,55 @@ export default function CorporateHealthPage() {
           </div>
         </section>
 
-        {/* ── CTA Banner ── */}
-        <section style={{ padding: '64px 0', background: '#fff' }}>
+        <section className="py-16 bg-white">
           <div className="ch-container">
-            <div style={{
-              borderRadius: '28px',
-              background: '#f5f6fa',
-              border: '1.5px solid #eaebf0',
-              padding: '56px 64px',
-              display: 'flex',
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '32px',
-              position: 'relative',
-              overflow: 'hidden',
-            }}>
-              <div style={{ position: 'relative', zIndex: 1 }}>
-                <p style={{ fontSize: '10px', letterSpacing: '0.3em', textTransform: 'uppercase', color: 'rgba(59,63,105,0.5)', marginBottom: '8px', fontWeight: 700 }}>
+            <div className="
+              rounded-[28px]
+              bg-[#f5f6fa]
+              border border-[#eaebf0]
+              p-8 md:p-14
+              flex flex-col lg:flex-row
+              items-center lg:items-center
+              justify-between
+              gap-8
+              relative
+              overflow-hidden
+            ">
+              <div className="relative z-10 text-center lg:text-left">
+                <p className="text-[10px] tracking-[0.3em] uppercase text-[#3b3f69]/50 mb-2 font-bold">
                   Get Started
                 </p>
-                <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(24px, 3vw, 36px)', fontWeight: 600, color: '#3b3f69', marginBottom: '10px', lineHeight: 1.2 }}>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#3b3f69] mb-3 leading-tight" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
                   Empower Your Workforce
                 </h2>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '12px' }}>
-                  <span style={{ fontSize: '12px', fontWeight: 700, color: '#ca1254', background: 'rgba(202,18,84,0.1)', padding: '4px 10px', borderRadius: '6px' }}>
+                <div className="flex items-center justify-center lg:justify-start gap-2 mb-3">
+                  <span className="text-xs font-bold text-[#ca1254] bg-[#ca1254]/10 px-2.5 py-1 rounded-md">
                     Starting from $250
                   </span>
                 </div>
-                <p style={{ fontSize: '15px', color: 'rgba(59,63,105,0.65)', fontWeight: 300 }}>
+                <p className="text-sm sm:text-base text-[#3b3f69]/65 font-light">
                   Get in touch for a demonstration or book your first on-site day online.
                 </p>
               </div>
-              <div style={{ display: 'flex', gap: '12px', flexShrink: 0, position: 'relative', zIndex: 1 }}>
-                <a href="/booking" style={{
-                  padding: '14px 28px', borderRadius: '10px',
-                  background: 'linear-gradient(135deg, #ca1254, #e84d8a)',
-                  color: '#fff', fontWeight: 600, fontSize: '14px',
-                  textDecoration: 'none', whiteSpace: 'nowrap',
-                  boxShadow: '0 8px 24px rgba(202,18,84,0.3)',
-                  transition: 'opacity 0.2s',
-                }}>
+              <div className="flex flex-col sm:flex-row gap-3 relative z-10 w-full sm:w-auto">
+                <a href="/booking" className="
+                  px-8 py-4 rounded-xl
+                  bg-gradient-to-br from-[#ca1254] to-[#e84d8a]
+                  text-white font-semibold text-sm
+                  text-center
+                  shadow-lg shadow-[#ca1254]/30
+                  hover:opacity-90 transition
+                ">
                   Book Now
                 </a>
-                <a href="/contact" style={{
-                  padding: '14px 28px', borderRadius: '10px',
-                  background: '#fff', color: '#3b3f69',
-                  fontWeight: 600, fontSize: '14px',
-                  textDecoration: 'none', whiteSpace: 'nowrap',
-                  border: '1.5px solid rgba(59,63,105,0.15)',
-                  transition: 'opacity 0.2s',
-                }}>
+                <a href="/contact" className="
+                  px-8 py-4 rounded-xl
+                  bg-white text-[#3b3f69]
+                  font-semibold text-sm
+                  text-center
+                  border border-[#3b3f69]/15
+                  hover:opacity-90 transition
+                ">
                   Enquire Now
                 </a>
               </div>

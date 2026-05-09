@@ -24,7 +24,7 @@ export default function AboutPage() {
         <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16 text-center">
           <p className="text-xs text-gray-400 italic w-full leading-relaxed">
             <span className="font-bold text-gray-500 not-italic block mb-2 uppercase tracking-widest text-[10px]">Clinical Disclaimer</span>
-            All treatments are administered by qualified healthcare professionals following appropriate clinical protocols. Individual suitability is determined through clinical assessment. Results may vary and are dependent on individual health requirements.
+            All services are administered by qualified healthcare professionals following appropriate clinical protocols. Individual suitability is determined through clinical assessment. Results may vary and are dependent on individual health requirements.
           </p>
         </div>
       </section>

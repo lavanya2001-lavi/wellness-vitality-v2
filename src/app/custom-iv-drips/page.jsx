@@ -506,7 +506,7 @@ export default function CustomIvDripsPage() {
                 <span className="eyebrow-line" />
               </span>
               <h2 className="section-title" style={{ fontSize: 'clamp(30px, 3vw, 40px)', margin: '0 0 16px' }}>
-                Treatment Add-ons & Boosters
+                Service Add-ons & Boosters
               </h2>
               <p style={{ fontSize: '15.5px', color: '#6b7280', fontWeight: 300, lineHeight: '1.7', maxWidth: '580px', margin: '0 auto' }}>
                 Complement any IV therapy with targeted boosters — curated by our clinicians to amplify your results.

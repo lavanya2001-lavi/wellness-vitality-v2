@@ -44,11 +44,11 @@ const faqs = [
     items: [
       {
         q: "Who performs the infusions?",
-        a: "All infusions are administered by AHPRA-registered Registered Nurses (RNs) with specialised training in cannulation and clinical monitoring.",
+        a: "All infusions are administered by Registered Nurses (RNs) with specialised training in cannulation and clinical monitoring.",
       },
       {
         q: "How do you ensure safety?",
-        a: "We follow strict clinical protocols including pre-treatment screening, aseptic technique, and continuous observation during the session.",
+        a: "We follow strict clinical protocols including pre-session screening, aseptic technique, and continuous observation during the session.",
       },
       {
         q: "Are there any side effects?",
@@ -66,11 +66,11 @@ const faqs = [
     items: [
       {
         q: "Do I need a blood test?",
-        a: "Not always. However, for certain treatments like iron infusions, recent pathology results are required to ensure clinical appropriateness.",
+        a: "Not always. However, for certain services like iron infusions, recent pathology results are required to ensure clinical appropriateness.",
       },
       {
         q: "Is it covered by Medicare?",
-        a: "Most wellness-based IV infusions are not covered by Medicare. We can guide you if any specific treatments justify individual coverage.",
+        a: "Most wellness-based IV infusions are not covered by Medicare. We can guide you if any specific services justify individual coverage.",
       },
       {
         q: "How often can I get therapy?",
@@ -106,7 +106,7 @@ const faqs = [
     items: [
       {
         q: "Can I have an IV at home?",
-        a: "Yes. We offer fully mobile IV services where our RNs come to you, maintaining the exact same clinical standards as in-clinic care.",
+        a: "Yes. We offer fully mobile IV services where our RNs come to you, maintaining the highest clinical standards of professional nursing care.",
       },
       {
         q: "Why choose Wellness Vitality?",
@@ -175,7 +175,7 @@ export default function FAQPage() {
           </h1>
           
           <p className="text-lg !text-white/90 max-w-2xl mx-auto leading-relaxed font-light mb-6 font-sans">
-            Find expert clinical answers regarding our mobile treatments and IV services.
+            Find expert clinical answers regarding our mobile services and IV therapies.
           </p>
 
           <div className="mt-8 w-16 h-1 bg-white/10 mx-auto rounded-full overflow-hidden">

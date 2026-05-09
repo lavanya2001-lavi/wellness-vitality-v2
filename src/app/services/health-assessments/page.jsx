@@ -337,11 +337,11 @@ export default function HealthAssessmentsPage() {
               </div>
 
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#3b3f69] mb-6 sm:mb-8 leading-tight">
-                Proactive Care for <span className="text-[#ca1254]">Long-Term Health</span>
+                Comprehensive Wellness Screening from <span className="text-[#ca1254]">$199</span>
               </h2>
 
               <p className="text-sm sm:text-base lg:text-lg text-[#3b3f69]/80 leading-relaxed font-light mb-6 sm:mb-8">
-                Our health assessments support preventative care and early detection for aged care and NDIS clients.
+                Our health assessments support integrated health & wellness and early detection for aged care and NDIS clients.
               </p>
 
               <div className="space-y-3 sm:space-y-4">

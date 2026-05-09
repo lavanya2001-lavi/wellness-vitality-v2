@@ -27,9 +27,8 @@ const TeethWhitening = () => {
 
                 {/* DESCRIPTION */}
                 <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-5">
-                    Safe and effective treatments designed to brighten your smile by up to
-                    6–8 shades. Delivered by qualified healthcare professionals, available
-                    in-clinic or via mobile service.
+                    Safe and effective services using advanced ultrasonic technology to brighten your 
+                    smile by up to 5–14 shades. Delivered by qualified healthcare professionals directly to your home or office.
                 </p>
 
                 {/* CTA */}

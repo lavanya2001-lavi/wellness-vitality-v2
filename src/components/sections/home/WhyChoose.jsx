@@ -20,8 +20,8 @@ const cards = [
   },
   {
     title: 'Personalised Clinical Care',
-    subtitle: 'Tailored Treatments',
-    description: 'Every treatment is tailored based on a full clinical assessment.',
+    subtitle: 'Tailored Services',
+    description: 'Every session is tailored based on a full clinical assessment.',
     image: PersonalisedCare,
     link: '/about',
     color: 'rgb(160,166,205)',

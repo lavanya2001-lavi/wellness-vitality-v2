@@ -21,13 +21,13 @@ const services = [
   {
     title: "Health Assessments",
     description:
-      "Comprehensive wellness checks and preventative health screening for aged care and NDIS clients.",
+      "Comprehensive wellness checks and health & wellness screening for aged care and NDIS clients.",
     image: HealthAssessmentImage,
   },
   {
     title: "Teeth Whitening",
     description:
-      "Professional teeth whitening treatments delivered by qualified healthcare professionals. Improves smile appearance and can lighten teeth by up to 6 to 8 shades.",
+      "Professional teeth whitening services delivered by qualified healthcare professionals. Improves smile appearance and can lighten teeth by up to 6 to 8 shades.",
     image: TeethWhiteningImage,
   },
   {
@@ -61,7 +61,7 @@ const Services = () => {
             Our Services
           </h2>
           <p className="text-gray-500 max-w-2xl md:mx-auto text-sm md:text-lg leading-relaxed">
-            We offer a range of nurse-led services including IV infusions, teeth whitening, blood collection, and clinical nursing reports. Delivered both in-clinic and via our mobile service, our care is safe, convenient, and tailored to your individual needs.
+            We offer a range of nurse-led services including IV infusions, teeth whitening, blood collection, and clinical nursing reports. Delivered via our mobile service, our care is safe, convenient, and tailored to your individual needs.
           </p>
         </div>
 

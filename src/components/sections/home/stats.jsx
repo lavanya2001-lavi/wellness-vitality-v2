@@ -53,13 +53,13 @@ const StatsSection = () => {
 
             {/* BACKGROUND TEXT */}
             <div
-                className="absolute inset-0 flex items-center justify-center pointer-events-none select-none text-center whitespace-nowrap italic"
+                className="absolute inset-0 flex items-center justify-center pointer-events-none select-none text-center whitespace-nowrap italic overflow-hidden"
                 style={{
-                    fontSize: '130px',
+                    fontSize: 'clamp(28px, 9vw, 130px)',
                     fontWeight: 400,
                     letterSpacing: '0.08em',
-                    transform: 'scaleX(1.08)', // subtle width
-                    fontFamily: 'var(--font-mackinac), serif', // 🔥 different font style
+                    transform: 'scaleX(1.08)',
+                    fontFamily: 'var(--font-mackinac), serif',
                     color: 'rgba(202,18,84,0.08)',
                 }}
             >
@@ -71,7 +71,7 @@ const StatsSection = () => {
                 <div className="grid grid-cols-3 md:grid-cols-3 gap-4 md:gap-16 text-center">
 
                     {stats.map((item, index) => (
-                        <div key={index} className="max-w-[100px] mx-auto md:max-w-xs">
+                        <div key={index} className="max-w-[140px] sm:max-w-xs mx-auto">
 
                             {/* NUMBER */}
                             <h3
@@ -83,7 +83,7 @@ const StatsSection = () => {
 
                             {/* TEXT */}
                             <p
-                                className="text-[11px] md:text-lg leading-tight md:leading-relaxed font-normal"
+                                className="text-[10px] sm:text-xs md:text-lg leading-snug md:leading-relaxed font-normal"
                                 style={{ color: 'rgb(59,63,105)' }}
                             >
                                 {item.text}

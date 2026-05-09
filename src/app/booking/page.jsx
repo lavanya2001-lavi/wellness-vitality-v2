@@ -78,7 +78,7 @@ const SERVICES = [
   },
   {
     id: 'preventative-health',
-    title: 'Preventative Health',
+    title: 'Integrated Health & Wellness',
     description: 'Proactive health screenings and personalised wellness strategies.',
     icon: <LocalHospital />,
     price: 180,
@@ -109,7 +109,7 @@ const SERVICES = [
     title: 'Teeth Whitening',
     description: 'High-performance clinical teeth whitening with protective minerals.',
     icon: <AutoFixHigh />,
-    price: 299,
+    price: 250,
   },
   {
     id: 'corporate-health',
@@ -131,7 +131,7 @@ const IV_PACKAGES = [
 
 const CUSTOM_DRIP_PACKAGES = [
   { id: 'cd-hydration', name: 'Hydration Revival Infusion', price: 280, desc: 'Vitamin C, Magnesium, B-Complex & Zinc' },
-  { id: 'cd-anti', name: 'Anti-Inflammatory Infusion', price: 350, desc: 'Vitamin C, Magnesium, B-Complex, Zinc & Taurine' },
+  { id: 'cd-anti', name: 'Restorative & Wellness Infusion', price: 350, desc: 'Vitamin C, Magnesium, B-Complex, Zinc & Taurine' },
   { id: 'cd-immune', name: 'Immune Defence Infusion', price: 430, desc: 'Vitamin C, B-Complex, Zinc, Selenium & Glutathione' },
   { id: 'cd-recovery', name: 'Recovery & Performance Infusion', price: 455, desc: 'Vitamin C, Magnesium, B-complex, Vitamin B12, Taurine & GB Shot' },
   { id: 'cd-calm', name: 'Calm & Restore Infusion', price: 350, desc: 'Magnesium, GABA, Taurine' },
@@ -172,7 +172,7 @@ const OTHER_PACKAGES = {
     { id: 'pkg-health-assess', name: 'Health Assessment and Blood Collection', price: 199, desc: 'Comprehensive wellness evaluations including clinical history, vitals, and standard blood collection.' }
   ],
   'preventative-health': [
-    { id: 'pkg-prev-health', name: 'Preventative Health', price: 180, desc: 'Proactive health screenings and personalised wellness strategies.' }
+    { id: 'pkg-prev-health', name: 'Integrated Health & Wellness', price: 180, desc: 'Proactive health screenings and personalised wellness strategies.' }
   ],
   'aged-care-ndis': [
     { id: 'pkg-aged-care', name: 'Aged Care & NDIS', price: 160, desc: 'Professional nursing care for aged-care residents and NDIS participants.' }
@@ -181,7 +181,9 @@ const OTHER_PACKAGES = {
     { id: 'pkg-blood', name: 'Blood Collection', price: 149, desc: 'Convenient, professional blood collection services at your preferred location.' }
   ],
   'teeth-whitening': [
-    { id: 'pkg-teeth', name: 'Teeth Whitening', price: 299, desc: 'High-performance clinical teeth whitening with protective minerals.' }
+    { id: 'pkg-teeth-single', name: 'Single Session', price: 250, desc: '60-minute session including standard whitening and post-care guide.' },
+    { id: 'pkg-teeth-triple', name: 'Triple Session', price: 259, desc: '3x intensive rounds for deep stain removal and maximum results.' },
+    { id: 'pkg-teeth-couples', name: 'Couples Session', price: 499, desc: 'Simultaneous treatment for two people in one visit.' }
   ],
   'corporate-health': [
     { id: 'pkg-corp', name: 'Corporate Health Services', price: 250, desc: 'Workplace wellness programmes, health checks and team vitality packages.' }
@@ -193,7 +195,6 @@ const OTHER_PACKAGES = {
 
 const APPOINTMENT_TYPES = [
   { id: 'home-visit', title: 'Home Visit', description: 'Our clinical team comes to your home', icon: <HomeIcon />, emoji: '🏠' },
-  { id: 'clinic-visit', title: 'Clinic Visit', description: 'Visit our Norwest clinical facility', icon: <LocalHospital />, emoji: '🏥' },
   { id: 'corporate-visit', title: 'Corporate / Workplace Visit', description: 'Onsite nursing at your workplace', icon: <Work />, emoji: '🏢' },
   { id: 'teleconsultation', title: 'Teleconsultation', description: 'Virtual consultation via secure video link', icon: <Videocam />, emoji: '💻' },
 ];
@@ -203,24 +204,23 @@ const NURSES = [
     id: 'belle',
     name: 'Registered Nurse Belle',
     image: NurseBelleImage,
-    desc: 'Registered Nurse with 8 years clinical experience in IV therapy and restorative care.'
+    // desc: 'Registered Nurse with 8 years clinical experience in IV therapy and restorative care.'
   },
   {
     id: 'elias',
     name: 'Registered Nurse Elias Roumie',
     image: NurseEliasImage,
-    desc: 'Registered Nurse specialising in clinical health assessments and preventative wellness.'
+    // desc: 'Registered Nurse specialising in clinical health assessments and health & wellness support.'
   }
 ];
 
-const CLINIC_ADDRESS = 'Suite 226, 2–8 Brookhollow Avenue, Norwest NSW 2153';
 
 const STEP_LABELS = ['Services', 'Packages', 'Nurse', 'Appointment', 'Details', 'Date & Time', 'Summary', 'Payment'];
 
 const STEP_META = [
   { label: 'Select Services', sub: 'Choose one or more clinical services you need' },
   { label: 'Select Packages', sub: 'Customise your formulations based on the selected services' },
-  { label: 'Select Your Nurse', sub: 'Choose your preferred healthcare professional for this treatment' },
+  { label: 'Select Your Nurse', sub: 'Choose your preferred healthcare professional for this session' },
   { label: 'Appointment Type', sub: 'How would you like to receive care?' },
   { label: 'Personal Details', sub: 'Tell us a little about yourself' },
   { label: 'Date & Time', sub: 'Pick your preferred appointment slot' },
@@ -390,7 +390,7 @@ export default function BookingPage() {
     setLoading(true);
     setErrorMessage("");
     try {
-      const response = await fetch('/api/send-booking-email', {
+      const response = await fetch('/api/booking', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -424,7 +424,7 @@ export default function BookingPage() {
 
   const isTeleconsultationOnly = bookingData.appointmentType?.id === 'teleconsultation';
   const needsAddress = bookingData.appointmentType?.id === 'home-visit' || bookingData.appointmentType?.id === 'corporate-visit';
-  const showClinicAddress = bookingData.appointmentType?.id === 'clinic-visit';
+  const showClinicAddress = false;
 
   const calculateTotal = () => {
     let total = 0;
@@ -559,17 +559,17 @@ export default function BookingPage() {
           <Fade in timeout={400}>
             <Box sx={{ maxWidth: 860, mx: 'auto' }}>
               <Box sx={{ mb: 4, p: 2, borderRadius: 3, bgcolor: '#e8f4fd', border: '1px solid #b6daed', textAlign: 'center' }}>
-                <Typography variant="body2" sx={{ color: '#1a6fa0', fontWeight: 600 }}>🏷️ Confirm your specific treatments and options. You can select multiple items.</Typography>
+                <Typography variant="body2" sx={{ color: '#1a6fa0', fontWeight: 600 }}>🏷️ Confirm your specific services and options. You can select multiple items.</Typography>
               </Box>
               {bookingData.selectedServices.map(service => {
                 let packageSections = [];
 
                 if (service.id === 'iv-infusions') {
-                  packageSections = [{ title: 'IV Infusion Treatments', items: IV_PACKAGES }];
+                  packageSections = [{ title: 'IV Infusion Services', items: IV_PACKAGES }];
                 } else if (service.id === 'custom-iv-drips') {
                   packageSections = [
                     { title: 'Base Formulations', items: CUSTOM_DRIP_PACKAGES },
-                    { title: 'Treatment Add-ons', items: CUSTOM_ADDONS },
+                    { title: 'Service Add-ons', items: CUSTOM_ADDONS },
                     { title: 'Boosters Menu', items: CUSTOM_BOOSTERS }
                   ];
                 } else if (OTHER_PACKAGES[service.id]) {
@@ -745,19 +745,6 @@ export default function BookingPage() {
                     </Fade>
                   </Grid>
                 )}
-                {showClinicAddress && (
-                  <Grid item xs={12}>
-                    <Fade in timeout={300}>
-                      <Box sx={{ p: 2.5, borderRadius: 3, bgcolor: '#f4f4fa', border: '1.5px solid #ededf5', display: 'flex', alignItems: 'flex-start', gap: 2 }}>
-                        <Box sx={{ width: 40, height: 40, borderRadius: 2, bgcolor: '#3b3f6910', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>🏥</Box>
-                        <Box>
-                          <Typography variant="caption" sx={{ fontWeight: 700, color: '#3b3f69', textTransform: 'uppercase', letterSpacing: 1, display: 'block', mb: 0.5 }}>Clinic Address</Typography>
-                          <Typography variant="body2" fontWeight={600} color="secondary">{CLINIC_ADDRESS}</Typography>
-                        </Box>
-                      </Box>
-                    </Fade>
-                  </Grid>
-                )}
               </Grid>
             </Box>
           </Fade>
@@ -856,12 +843,12 @@ export default function BookingPage() {
                   </Grid>
                 </Grid>
 
-                {(needsAddress || showClinicAddress) && (
+                {needsAddress && (
                   <>
                     <Divider sx={{ my: 2.5 }} />
                     <Box>
                       <Typography variant="caption" sx={{ color: '#ca1254', fontWeight: 800, textTransform: 'uppercase', letterSpacing: 1, display: 'block', mb: 0.5 }}>Address</Typography>
-                      <Typography variant="body1" fontWeight={700} color="secondary">{needsAddress ? bookingData.userDetails.address || '—' : CLINIC_ADDRESS}</Typography>
+                      <Typography variant="body1" fontWeight={700} color="secondary">{bookingData.userDetails.address || '—'}</Typography>
                     </Box>
                   </>
                 )}
@@ -886,7 +873,7 @@ export default function BookingPage() {
               <Box sx={{ p: 3.5, borderRadius: 4, background: 'linear-gradient(135deg, #3b3f69 0%, #2e3257 100%)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Box>
                   <Typography variant="caption" sx={{ color: 'rgba(255,255,255,0.6)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, display: 'block' }}>Estimated Total</Typography>
-                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', mt: 0.3 }}>Includes all selected treatments</Typography>
+                  <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.7)', mt: 0.3 }}>Includes all selected services</Typography>
                 </Box>
                 <Typography variant="h4" sx={{ color: '#fff', fontWeight: 900, letterSpacing: '-0.03em' }}>${calculateTotal()}</Typography>
               </Box>
@@ -996,17 +983,17 @@ export default function BookingPage() {
   return (
     <ThemeProvider theme={theme}>
       <main style={{ minHeight: '100vh', backgroundColor: '#f7f7fc', position: 'relative' }}>
-        <Box sx={{ 
-          position: 'sticky', 
-          top: { xs: 60, sm: 110 }, 
-          mt: 0, 
-          zIndex: 10, 
-          bgcolor: '#ffffff', 
-          borderBottom: '1px solid #ededf5', 
-          boxShadow: '0 4px 12px rgba(0,0,0,0.03)', 
-          pt: 0, 
-          pb: { xs: 1, sm: 2.5 }, 
-          overflow: 'hidden' 
+        <Box sx={{
+          position: 'sticky',
+          top: { xs: 60, sm: 110 },
+          mt: 0,
+          zIndex: 10,
+          bgcolor: '#ffffff',
+          borderBottom: '1px solid #ededf5',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.03)',
+          pt: 0,
+          pb: { xs: 1, sm: 2.5 },
+          overflow: 'hidden'
         }}>
           <Box sx={{ width: '100%', height: 3, bgcolor: '#f0f0f7', mb: { xs: 0.5, sm: 2.5 } }}>
             <Box sx={{ width: `${((activeStep + 1) / STEP_LABELS.length) * 100}%`, height: '100%', bgcolor: '#ca1254', transition: 'width 0.6s cubic-bezier(0.65, 0, 0.35, 1)', boxShadow: '0 0 10px rgba(202,18,84,0.4)' }} />
@@ -1082,7 +1069,7 @@ export default function BookingPage() {
             <Typography variant="caption" color="textSecondary">All bookings are subject to clinical availability.</Typography>
           </Container>
         </Box>
-        
+
       </main>
     </ThemeProvider>
   );

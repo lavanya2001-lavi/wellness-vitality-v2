@@ -54,21 +54,22 @@ const Navbar = () => {
 
             <div className="absolute left-0 top-full mt-2 w-60 bg-white border border-gray-100 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 py-2">
               {[
-                { label: 'Health Assessments', href: '/services/health-assessments' },
-                { label: 'Preventative Health & Wellness', href: '/services/preventative-health' },
-                { label: 'Aged Care & NDIS Nursing', href: '/services/aged-care-ndis' },
-                { label: 'IV Infusions', href: '/services/iv-infusions' },
-                { label: 'Custom IV Drips', href: '/custom-iv-drips' },
-                { label: 'Blood Collection', href: '/services/blood-collection' },
-                { label: 'Teeth Whitening', href: '/services/teeth-whitening' },
-                { label: 'Corporate Health Services', href: '/services/corporate-health' },
+                { label: 'Health Assessments', href: '/services/health-assessments', price: 'from $199' },
+                { label: 'Integrated Health & Wellness', href: '/services/preventative-health', price: 'from $180' },
+                { label: 'Aged Care & NDIS Nursing', href: '/services/aged-care-ndis', price: 'Enquire' },
+                { label: 'IV Infusions', href: '/services/iv-infusions', price: 'from $220' },
+                { label: 'Custom IV Drips', href: '/custom-iv-drips', price: 'from $220' },
+                { label: 'Blood Collection', href: '/services/blood-collection', price: 'from $149' },
+                { label: 'Teeth Whitening', href: '/services/teeth-whitening', price: 'from $250' },
+                { label: 'Corporate Health Services', href: '/services/corporate-health', price: 'Enquire' },
               ].map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#3b3f69]/5 hover:text-[#3b3f69] transition-colors"
+                  className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-[#3b3f69]/5 hover:text-[#3b3f69] transition-colors"
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  <span className="text-[10px] font-bold text-[#ca1254] bg-[#ca1254]/5 px-2 py-0.5 rounded-full uppercase tracking-wider">{item.price}</span>
                 </Link>
               ))}
             </div>
@@ -94,17 +95,19 @@ const Navbar = () => {
         {/* CTA + MENU */}
         <div className="flex items-center gap-1.5 md:gap-3 shrink-0">
 
-          {/* BUTTON */}
-          <Button
-            href="/booking"
-            variant="primary"
-            className="w-auto min-w-[80px] md:w-[150px] px-2 py-1.5 md:px-4 md:py-3 text-[10px] md:text-sm flex items-center justify-center gap-1 md:gap-2 whitespace-nowrap"
-          >
-            Book Now
-            <svg className="w-3 h-3 md:w-3.5 md:h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </Button>
+          {/* BUTTON (desktop only) */}
+          <div className="hidden md:block">
+            <Button
+              href="/booking"
+              variant="primary"
+              className="w-[150px] px-4 py-3 text-sm flex items-center justify-center gap-2 whitespace-nowrap"
+            >
+              Book Now
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </Button>
+          </div>
 
           {/* MOBILE MENU ICON */}
           <button
@@ -126,7 +129,7 @@ const Navbar = () => {
 
       {/* MOBILE MENU */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-xl overflow-auto" style={{ maxHeight: 'calc(100vh - 90px)' }}>
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-xl overflow-y-auto overscroll-contain" style={{ maxHeight: 'calc(100vh - 60px)', WebkitOverflowScrolling: 'touch' }}>
           <div className="px-4 py-6 space-y-6">
 
             <Link href="/" className="block text-base font-medium text-gray-800 hover:text-[#ca1254]" onClick={() => setIsMobileMenuOpen(false)}>
@@ -139,22 +142,23 @@ const Navbar = () => {
               </div>
               <div className="pl-4 space-y-4">
                 {[
-                  { label: 'Health Assessments', href: '/services/health-assessments' },
-                  { label: 'Preventative Health & Wellness', href: '/services/preventative-health' },
-                  { label: 'Aged Care & NDIS Nursing', href: '/services/aged-care-ndis' },
-                  { label: 'IV Infusions', href: '/services/iv-infusions' },
-                  { label: 'Custom IV Drips', href: '/custom-iv-drips' },
-                  { label: 'Blood Collection', href: '/services/blood-collection' },
-                  { label: 'Teeth Whitening', href: '/services/teeth-whitening' },
-                  { label: 'Corporate Health Services', href: '/services/corporate-health' },
+                  { label: 'Health Assessments', href: '/services/health-assessments', price: 'from $199' },
+                  { label: 'Integrated Health & Wellness', href: '/services/preventative-health', price: 'from $180' },
+                  { label: 'Aged Care & NDIS Nursing', href: '/services/aged-care-ndis', price: 'Enquire' },
+                  { label: 'IV Infusions', href: '/services/iv-infusions', price: 'from $220' },
+                  { label: 'Custom IV Drips', href: '/custom-iv-drips', price: 'from $220' },
+                  { label: 'Blood Collection', href: '/services/blood-collection', price: 'from $149' },
+                  { label: 'Teeth Whitening', href: '/services/teeth-whitening', price: 'from $250' },
+                  { label: 'Corporate Health Services', href: '/services/corporate-health', price: 'Enquire' },
                 ].map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block text-sm text-gray-600 hover:text-[#3b3f69]"
+                    className="flex items-center justify-between text-sm text-gray-600 hover:text-[#3b3f69]"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    <span className="text-[10px] font-bold text-[#ca1254] bg-[#ca1254]/5 px-2 py-0.5 rounded-full uppercase tracking-wider">{item.price}</span>
                   </Link>
                 ))}
               </div>
@@ -164,9 +168,7 @@ const Navbar = () => {
               Training
             </Link>
 
-            <Link href="/booking" className="block text-base font-medium text-gray-800 hover:text-[#ca1254]" onClick={() => setIsMobileMenuOpen(false)}>
-              Booking
-            </Link>
+
 
             <Link href="/about" className="block text-base font-medium text-gray-800 hover:text-[#ca1254]" onClick={() => setIsMobileMenuOpen(false)}>
               About Us
@@ -174,6 +176,15 @@ const Navbar = () => {
 
             <Link href="/contact" className="block text-base font-medium text-gray-800 hover:text-[#ca1254]" onClick={() => setIsMobileMenuOpen(false)}>
               Contact Us
+            </Link>
+
+            {/* BOOK NOW CTA */}
+            <Link
+              href="/booking"
+              className="block w-full text-center bg-[#ca1254] text-white font-semibold text-sm py-3.5 rounded-lg hover:bg-[#a30f44] transition mt-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Book Now →
             </Link>
 
           </div>

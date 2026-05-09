@@ -34,7 +34,7 @@ const BookingOverview = () => {
             </h2>
 
             <p className="text-sm md:text-base text-gray-600 mb-8">
-              Book your treatment through our secure online booking system.
+              Book your session through our secure online booking system.
               We use Calendly for scheduling, with Afterpay available.
             </p>
 

@@ -10,13 +10,13 @@ const services = [
   'Wound care and dressings',
   'Catheter care',
   'Continence assessments',
-  'Pressure injury prevention',
+  'Pressure injury risk management',
   'Chronic disease monitoring',
   'Post-hospital care',
 ];
 
 const benefits = [
-  { title: 'Professional Clinical Support', desc: 'AHPRA-registered nurses providing expert nursing care.' },
+  { title: 'Professional Clinical Support', desc: 'Registered nurses providing expert nursing care.' },
   { title: 'Improved Quality of Care', desc: 'Evidence-based care tailored to individual health needs.' },
   { title: 'Reduced Hospital Visits', desc: 'Proactive management to minimise unnecessary hospitalisations.' },
   { title: 'Ongoing Health Management', desc: 'Consistent monitoring and support for long-term health.' },
@@ -375,9 +375,9 @@ export default function AgedCareNDISPage() {
         {/* ── About / Image ── */}
         <section className="about-section">
           <div className="page-container">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-[72px] items-center">
               {/* Image */}
-              <div style={{ position: 'relative' }}>
+              <div className="order-first md:order-none relative">
                 <div className="about-image-wrap">
                   <Image
                     src={AgedCareImage}
@@ -389,7 +389,7 @@ export default function AgedCareNDISPage() {
                 </div>
                 <div className="stat-pill">
                   <div className="stat-num">100%</div>
-                  <div className="stat-label">AHPRA-registered nurses</div>
+                  <div className="stat-label">Registered nurses</div>
                 </div>
               </div>
 
@@ -401,20 +401,20 @@ export default function AgedCareNDISPage() {
                   <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
                 </div>
                 <h2 className="section-title" style={{ fontSize: 'clamp(36px, 4vw, 52px)', marginBottom: '24px' }}>
-                  Professional Support with a{' '}
-                  <em style={{ color: '#ca1254', fontStyle: 'italic' }}>Personal Touch</em>
+                  Dignified Clinical Nursing from{' '}
+                  <em style={{ color: '#ca1254', fontStyle: 'italic' }}>$160</em>
                 </h2>
                 <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#6b7280', fontWeight: 300, marginBottom: '8px', maxWidth: '440px' }}>
                   Reliable and compassionate nursing services for aged care residents and NDIS participants, supporting daily healthcare needs with a focus on dignity and quality of life.
                 </p>
-                <div className="stat-grid">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-8">
                   <div className="stat-card">
-                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '32px', fontWeight: 600, color: '#3b3f69', lineHeight: 1, marginBottom: '6px' }}>24/7</div>
-                    <div style={{ fontSize: '10px', color: 'rgba(59,63,105,0.5)', textTransform: 'uppercase', letterSpacing: '0.18em', fontWeight: 600 }}>Support Potential</div>
+                    <div className="text-2xl sm:text-3xl font-semibold text-[#3b3f69] leading-none mb-1.5" style={{ fontFamily: "'Cormorant Garamond', serif" }}>24/7</div>
+                    <div className="text-[10px] text-[#3b3f69]/50 uppercase tracking-widest font-semibold">Support Potential</div>
                   </div>
                   <div className="stat-card">
-                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '32px', fontWeight: 600, color: '#ca1254', lineHeight: 1, marginBottom: '6px' }}>100%</div>
-                    <div style={{ fontSize: '10px', color: 'rgba(202,18,84,0.5)', textTransform: 'uppercase', letterSpacing: '0.18em', fontWeight: 600 }}>AHPRA Nurses</div>
+                    <div className="text-2xl sm:text-3xl font-semibold text-[#ca1254] leading-none mb-1.5" style={{ fontFamily: "'Cormorant Garamond', serif" }}>Qualified</div>
+                    <div className="text-[10px] text-[#ca1254]/50 uppercase tracking-widest font-semibold">Registered Nurses</div>
                   </div>
                 </div>
               </div>
@@ -425,7 +425,7 @@ export default function AgedCareNDISPage() {
         {/* ── Services & Benefits ── */}
         <section className="sb-section">
           <div className="page-container">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px' }}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
 
               {/* Services */}
               <div>
@@ -493,7 +493,7 @@ export default function AgedCareNDISPage() {
                 Our Care Process
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {steps.map((step, i) => (
                 <div key={step.title} className="step-card">
                   <div className="step-bg-num">{i + 1}</div>

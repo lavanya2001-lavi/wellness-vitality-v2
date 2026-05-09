@@ -12,7 +12,7 @@ const MobileServices = () => {
               Mobile Clinical Services
             </p>
             <p className="mt-6 text-lg text-zinc-300">
-              No more waiting in clinic queues. Our mobile team brings professional medical care, testing, and therapies directly to your home or office.
+              Our mobile team brings professional medical care, testing, and therapies directly to your home or office on your schedule.
             </p>
             <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-3">
                <div>

@@ -92,7 +92,7 @@ export default function RefundPolicyPage() {
               <div>
                 <h3 className="text-lg font-bold font-serif text-[#3b3f69] mb-3">Medical Suitability</h3>
                 <p className="text-sm leading-relaxed">
-                  If, upon clinical assessment, you are deemed unsuitable for treatment, your deposit will be fully refunded (or can be credited toward another service).
+                  If, upon clinical assessment, you are deemed unsuitable for a specific service, your deposit will be fully refunded (or can be credited toward another service).
                 </p>
               </div>
 

@@ -13,10 +13,10 @@ const steps = [
 ];
 
 const benefits = [
-  'Reduced need for clinic visits',
-  'Ideal for mobility-limited patients',
-  'Comfortable and convenient',
-  'Professional and safe process',
+  'Blood pressure monitoring',
+  'Heart rate & rhythm regularity',
+  'Oxygen saturation levels',
+  'Temperature & Respiratory rate',
 ];
 
 const locations = [
@@ -409,7 +409,7 @@ export default function BloodCollectionPage() {
         <ServiceHero
           badge="Pathology Services"
           heading="Blood Collection Services"
-          subtext="Convenient and professional blood collection delivered to your location."
+          subtext="Professional blood collection services combined with a mini wellness assessment delivered to your location."
           ctaLabel="Enquire Now"
           ctaHref="/contact"
           secondaryCtaLabel="Book Now"
@@ -419,7 +419,7 @@ export default function BloodCollectionPage() {
         {/* ── About / Image ── */}
         <section className="about-section">
           <div className="page-container">
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '72px', alignItems: 'center' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-20 items-center">
 
               {/* Text — left side this time */}
               <div>
@@ -429,13 +429,16 @@ export default function BloodCollectionPage() {
                   <span className="eyebrow-line" style={{ background: '#ca1254', opacity: 0.4 }} />
                 </div>
                 <h2 className="section-title" style={{ fontSize: 'clamp(36px, 4vw, 52px)', marginBottom: '24px' }}>
-                  Accurate Testing,{' '}
-                  <em style={{ color: '#ca1254', fontStyle: 'italic' }}>Home Convenience</em>
+                  Clinical Pathology & <br />
+                  <em style={{ color: '#ca1254', fontStyle: 'italic' }}>Wellness Assessment</em> from $149
                 </h2>
-                <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#6b7280', fontWeight: 300, marginBottom: '32px', maxWidth: '440px' }}>
-                  Designed for patients who prefer testing outside clinical environments, every sample handled with precision and care to ensure accurate, fast results.
+                <p style={{ fontSize: '16px', lineHeight: '1.75', color: '#6b7280', fontWeight: 300, marginBottom: '24px', maxWidth: '440px' }}>
+                  Wellness Vitality Australia offers professional blood collection services combined with a mini wellness assessment for $149.
                 </p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                <p style={{ fontSize: '14px', fontWeight: 600, color: '#3b3f69', marginBottom: '16px', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  Included Observations:
+                </p>
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-8">
                   {benefits.map((b) => (
                     <div key={b} className="benefit-tag">
                       <CheckIcon />
@@ -443,10 +446,13 @@ export default function BloodCollectionPage() {
                     </div>
                   ))}
                 </div>
+                <p style={{ fontSize: '15px', lineHeight: '1.6', color: '#6b7280', fontWeight: 300, maxWidth: '440px' }}>
+                  This service provides a convenient snapshot of your current health and wellbeing while ensuring a safe and professional clinical experience.
+                </p>
               </div>
 
               {/* Image — right side */}
-              <div style={{ position: 'relative' }}>
+              <div className="order-first md:order-last relative">
                 <div className="about-image-wrap">
                   <Image
                     src={BloodCollectionImage}
@@ -457,7 +463,7 @@ export default function BloodCollectionPage() {
                   />
                 </div>
                 <div className="stat-pill">
-                  <div className="stat-num">AHPRA</div>
+                  <div className="stat-num">Qualified</div>
                   <div className="stat-label">Registered nurses only</div>
                 </div>
               </div>
@@ -490,7 +496,7 @@ export default function BloodCollectionPage() {
                 Simple Four-Step Journey
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '20px' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {steps.map((item) => (
                 <div key={item.step} className="step-card">
                   <div className="step-bg-num">{item.step}</div>
@@ -520,7 +526,7 @@ export default function BloodCollectionPage() {
                 Why Choose Mobile Collection?
               </h2>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {advantages.map((item) => (
                 <div key={item.title} className="advantage-card">
                   <h3 style={{ fontSize: '16px', fontWeight: 700, color: '#3b3f69', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '10px' }}>

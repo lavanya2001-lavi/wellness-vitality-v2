@@ -16,7 +16,7 @@ import PreventativeHealthImage from '../../../public/images/services/healthimage
 const whyChooseCards = [
   {
     title: 'Registered Nurses',
-    description: 'Every service is delivered by fully qualified, AHPRA-registered nurses.',
+    description: 'Every service is delivered by fully qualified, registered nurses.',
     icon: (
       <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.3}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -56,14 +56,14 @@ const whyChooseCards = [
 const services = [
   {
     title: 'Health Assessments',
-    description: 'Comprehensive wellness checks and preventative health screening for aged care and NDIS clients. Proactive early detection to identify health risks before they escalate.',
+    description: 'Comprehensive wellness checks and health & wellness screening for aged care and NDIS clients. Proactive early detection to identify health risks before they escalate.',
     slug: 'health-assessments',
     image: HealthAssessmentImage,
     accent: 'indigo',
     features: ['Vital Signs Monitoring', 'Cardiovascular Risk', 'Clinical Reporting']
   },
   {
-    title: 'Preventative Health & Wellness',
+    title: 'Integrated Health & Wellness',
     description: 'A proactive approach targeting specific nutrient deficiencies through professional vitamin therapies, nutrition guidance and bespoke lifestyle consultations.',
     slug: 'preventative-health',
     image: PreventativeHealthImage,
@@ -76,7 +76,7 @@ const services = [
     slug: 'aged-care-ndis',
     image: AgedCareImage,
     accent: 'indigo',
-    features: ['Dignified Care', 'Medication Management', 'Wound Treatment']
+    features: ['Dignified Care', 'Medication Management', 'Wound Care']
   },
   {
     title: 'Custom IV Infusions',
@@ -88,19 +88,19 @@ const services = [
   },
   {
     title: 'Clinical Blood Collection',
-    description: 'Fast, reliable, and convenient phlebotomy and blood testing services performed safely at your home, office, or aged care facility by skilled professionals.',
+    description: 'Professional blood collection services combined with a mini wellness assessment including blood pressure, heart rate, and oxygen saturation monitoring.',
     slug: 'blood-collection',
     image: BloodCollectionImage,
     accent: 'indigo',
-    features: ['Pathology Testing', 'Fast Processing', 'Minimal Discomfort']
+    features: ['Pathology Testing', 'Wellness Assessment', 'Clinical Monitoring']
   },
   {
     title: 'Professional Teeth Whitening',
-    description: 'Professional-grade teeth whitening treatments delivered directly to you by qualified healthcare professionals for a safe, noticeably brighter, confident smile.',
+    description: 'High-end cosmetic whitening accelerator featuring advanced Ultrasonic technology and dual LED heads. Professional results starting from $250.',
     slug: 'teeth-whitening',
     image: TeethWhiteningImage,
     accent: 'rose',
-    features: ['Clinically Proven', 'Safe Application', 'Significant Lightening']
+    features: ['Ultrasonic Tech', 'Dual LED Heads', '5-14 Shades Lighter']
   },
   {
     title: 'Corporate Health Services',
@@ -234,7 +234,7 @@ export default function ServicesPage() {
                         href={`/services/${service.slug}`}
                         className="inline-flex items-center px-8 py-4 bg-[#3b3f69] text-white rounded-full font-semibold text-sm tracking-wide shadow-lg hover:bg-[#2a2d4b] transition-all hover:-translate-y-1 group-hover:bg-[#ca1254]"
                       >
-                        Explore Treatment
+                        Explore Service
                         <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
