@@ -202,13 +202,13 @@ const APPOINTMENT_TYPES = [
 const NURSES = [
   {
     id: 'belle',
-    name: 'Registered Nurse Belle',
+    name: 'Nurse Belle',
     image: NurseBelleImage,
     // desc: 'Registered Nurse with 8 years clinical experience in IV therapy and restorative care.'
   },
   {
     id: 'elias',
-    name: 'Registered Nurse Roumie Elias',
+    name: 'Nurse Elias',
     image: NurseEliasImage,
     // desc: 'Registered Nurse specialising in clinical health assessments and health & wellness support.'
   }
@@ -526,7 +526,7 @@ export default function BookingPage() {
                           <Typography fontWeight={700} color="secondary" fontSize="1.05rem" mb={0.25}>{s.title}</Typography>
                           <Typography variant="body2" color="textSecondary" lineHeight={1.5}>{s.description}</Typography>
                         </Box>
-                        <Checkbox checked={selected} onChange={(e) => { e.stopPropagation(); toggleService(s); }} color="primary" sx={{ p: 0, mt: 0.25 }} />
+                        <Checkbox checked={selected} onClick={(e) => e.stopPropagation()} onChange={() => toggleService(s)} color="primary" sx={{ p: 0, mt: 0.25 }} />
                       </Box>
                       <Box sx={{ mt: 'auto', pt: 1.5, borderTop: '1px solid #ededf5', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                         <Typography variant="caption" color="textSecondary">Starting from</Typography>
@@ -762,7 +762,7 @@ export default function BookingPage() {
                     <Chip icon={<Videocam sx={{ fontSize: 16 }} />} label="Teleconsultation — Select an available time slot via Calendly" sx={{ bgcolor: '#e8f4fd', color: '#1a6fa0', fontWeight: 700, fontSize: '0.8rem', py: 2.5, px: 1.5, '& .MuiChip-icon': { color: '#1a6fa0' } }} />
                   </Box>
                   <Paper sx={{ bgcolor: 'white', p: { xs: 1, md: 4 }, borderRadius: 4, border: '1.5px solid #ededf5', overflow: 'hidden' }}>
-                    <CalendlyEmbed url="https://calendly.com/jlavanya0212/new-meeting" />
+                    <CalendlyEmbed url="https://calendly.com/d/cxwc-525-qz7/new-meeting" />
                   </Paper>
                 </Box>
               ) : (

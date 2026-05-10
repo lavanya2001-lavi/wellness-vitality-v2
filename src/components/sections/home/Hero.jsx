@@ -72,7 +72,7 @@ const Hero = () => {
             </div>
 
             {/* MOBILE IMAGE */}
-            <div className="lg:hidden -mx-6 -mt-10 relative">
+            <div className="lg:hidden -mx-6 mt-0 relative">
               <Image
                 src={HeroImage}
                 alt="Healthcare Professionals"
@@ -124,7 +124,7 @@ const Hero = () => {
       </div>
 
       {/* HERO IMAGE */}
-      <div className="hidden lg:flex absolute right-0 lg:right-[7%] bottom-0 lg:bottom-3 w-full lg:w-[50%] h-[400px] sm:h-[500px] lg:h-[95%] items-end justify-center lg:justify-end pointer-events-none z-0">
+      <div className="hidden lg:flex absolute right-0 lg:right-[7%] bottom-0 lg:bottom-0 w-full lg:w-[50%] h-[400px] sm:h-[500px] lg:h-[95%] items-end justify-center lg:justify-end pointer-events-none z-0">
         <Image
           src={HeroImage}
           alt="Healthcare Professionals"

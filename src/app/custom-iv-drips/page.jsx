@@ -433,6 +433,7 @@ export default function CustomIvDripsPage() {
         .cta-btn-outline:hover {
           background: var(--rose-50);
           border-color: rgba(202,18,84,0.3);
+          color: var(--rose);
         }
       `}</style>
 

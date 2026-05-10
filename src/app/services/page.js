@@ -300,13 +300,12 @@ export default function ServicesPage() {
                   Book a Session
                 </Button>
 
-                <Button
+                <a
                   href="/contact"
-                  variant="outline"
-                  className="w-full sm:w-auto px-10 py-4 border-[#3b3f69]/20 text-[#3b3f69] rounded-xl font-bold text-sm hover:bg-white hover:border-[#3b3f69] transition-all duration-300"
+                  className="w-full sm:w-auto px-10 py-4 border border-[#3b3f69]/30 text-[#3b3f69] rounded-xl font-bold text-sm hover:bg-white hover:border-[#3b3f69] hover:text-[#3b3f69] transition-all duration-300 inline-flex items-center justify-center"
                 >
                   Talk to our team
-                </Button>
+                </a>
               </div>
 
             </div>
