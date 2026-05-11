@@ -6,7 +6,7 @@ import Button from "@/components/ui/Button";
 
 import IvInfusionImage from "../../../../public/images/services/IV Nutrient Therapy.png";
 import HealthAssessmentImage from "../../../../public/images/services/Healthcare.png";
-import TeethWhiteningImage from "../../../../public/images/services/teeth-whitening.png";
+import TeethWhiteningImage from "../../../../public/teethwhitening.png";
 import AgedCareImage from "../../../../public/images/services/agedcare.png";
 import BloodCollectionImage from "../../../../public/images/services/bloodcollection.png";
 import CorporateHealthImage from "../../../../public/images/services/coprate.png";

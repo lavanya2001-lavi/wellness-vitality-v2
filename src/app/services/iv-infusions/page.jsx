@@ -3,7 +3,7 @@ import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
 import FeatureCards from '@/components/ui/FeatureCards';
-import IvInfusionImage from '../../../../public/images/services/iv-infusion.png';
+import IvInfusionImage from '../../../../public/ivinfusionservice.png';
 
 const therapies = [
   { name: 'Immune Defence IV', price: '$260', desc: 'High-dose vitamin C, zinc, and immune-supporting nutrients.' },
@@ -435,7 +435,7 @@ export default function IVInfusionsPage() {
                     src={IvInfusionImage}
                     alt="IV Infusion Wellness"
                     width={800} height={1000}
-                    style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover' }}
+                    style={{ width: '100%', height: 'auto', maxHeight: '520px', display: 'block', objectFit: 'cover', objectPosition: 'center top' }}
                   />
                 </div>
                 <div className="stat-pill">
@@ -631,7 +631,7 @@ export default function IVInfusionsPage() {
         <section className="benefits-section">
           <div className="page-container" style={{ position: 'relative', zIndex: 1 }}>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-              
+
               {/* Left Column: Benefits */}
               <div>
                 <div className="eyebrow" style={{ color: '#ca1254' }}>
@@ -665,25 +665,25 @@ export default function IVInfusionsPage() {
               {/* Right Column: Stats Grid */}
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { 
-                    val: '60m', 
+                  {
+                    val: '60m',
                     label: 'Typical Session',
-                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
                   },
-                  { 
-                    val: '100%', 
+                  {
+                    val: '100%',
                     label: 'Absorption Rate',
-                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10A8 8 0 004 12c0 6 8 10 8 10z"/></svg>
+                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10A8 8 0 004 12c0 6 8 10 8 10z" /></svg>
                   },
-                  { 
-                    val: 'Registered', 
+                  {
+                    val: 'Registered',
                     label: 'Nursing Staff',
-                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="8.5" cy="7" r="4" /><polyline points="17 11 19 13 23 9" /></svg>
                   },
-                  { 
-                    val: '17+', 
+                  {
+                    val: '17+',
                     label: 'Key Nutrients',
-                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" /></svg>
                   },
                 ].map((s) => (
                   <div key={s.label} className="stat-block">

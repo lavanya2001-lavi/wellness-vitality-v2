@@ -3,7 +3,7 @@ import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
 import FeatureCards from '@/components/ui/FeatureCards';
-import TeethWhiteningImage from '../../../../public/images/services/teeth-whitening.png';
+import TeethWhiteningImage from '../../../../public/hometeethwhite.png';
 
 const benefits = [
   { title: 'Ultrasound Technology', icon: '🔊', desc: 'Vibrates stain molecules and improves gel penetration for deeper results.' },

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
 import FeatureCards from '@/components/ui/FeatureCards';
-import PreventativeHealthImage from '../../../../public/images/services/preventative-health.png';
+import PreventativeHealthImage from '../../../../public/assessment.png';
 
 const vitaminServices = [
   'B12 injections',

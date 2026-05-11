@@ -5,7 +5,7 @@ import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
 import FeatureCards from '@/components/ui/FeatureCards';
-import CorporateHealthImage from '../../../../public/images/services/corporate-health.png';
+import CorporateHealthImage from '../../../../public/croprate.png';
 
 const services = [
   { name: 'Workplace Health Checks', desc: 'Comprehensive health assessments for employees.' },
@@ -415,7 +415,7 @@ export default function CorporateHealthPage() {
                     alt="Corporate Workplace Health"
                     width={800}
                     height={1000}
-                    style={{ width: '100%', height: 'auto', display: 'block', objectFit: 'cover', transition: 'transform 0.7s' }}
+                    style={{ width: '100%', height: 'auto', maxHeight: '520px', display: 'block', objectFit: 'cover', objectPosition: 'center top', transition: 'transform 0.7s' }}
                     onMouseEnter={e => (e.currentTarget.style.transform = 'scale(1.04)')}
                     onMouseLeave={e => (e.currentTarget.style.transform = 'scale(1)')}
                   />

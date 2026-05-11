@@ -45,9 +45,15 @@ export default function RefundPolicyPage() {
             {/* Deposits */}
             <div>
               <h2 className="text-2xl font-bold font-serif text-[#3b3f69] mb-4 border-b border-gray-100 pb-2">Deposits</h2>
-              <p className="leading-relaxed">
-                A deposit is required to secure all IV infusion appointments. This confirms your booking, reserves clinical time, and covers preparation of equipment and consumables.
+              <p className="leading-relaxed mb-3">
+                A deposit is required to secure all appointments. This confirms your booking, reserves clinical time, and covers preparation of equipment and consumables.
               </p>
+              <div className="bg-[#fdf2f6] border border-[#ca1254]/20 rounded-xl px-5 py-4 flex gap-3 items-start">
+                <svg className="w-4 h-4 mt-0.5 flex-shrink-0 text-[#ca1254]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <p className="text-sm leading-relaxed text-[#3b3f69]">
+                  <span className="font-bold">Deposits are non-refundable.</span> The deposit is used to cover travel costs incurred by our clinical team to reach your location.
+                </p>
+              </div>
             </div>
 
             {/* Refunds & Cancellations */}
@@ -112,8 +118,11 @@ export default function RefundPolicyPage() {
 
               <div>
                 <h3 className="text-lg font-bold font-serif text-[#3b3f69] mb-3">Mobile Appointments</h3>
-                <p className="text-sm leading-relaxed">
-                  For home visits, deposits also cover travel time and scheduling, and the same cancellation terms apply.
+                <p className="text-sm leading-relaxed mb-2">
+                  For home visits, deposits cover travel time and scheduling, and the same cancellation terms apply.
+                </p>
+                <p className="text-sm leading-relaxed text-gray-500">
+                  <span className="font-semibold text-[#3b3f69]">Travel charges may apply</span> for locations outside of the Sydney metro area. Our team will advise you of any applicable travel fee at the time of booking.
                 </p>
               </div>
             </div>

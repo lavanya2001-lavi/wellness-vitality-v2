@@ -3,7 +3,7 @@ import Image from 'next/image';
 import ServiceHero from '@/components/sections/services/ServiceHero';
 import ServiceCTA from '@/components/sections/services/ServiceCTA';
 import FeatureCards from '@/components/ui/FeatureCards';
-import HealthAssessmentImage from '../../../../public/images/services/health-assessment.png';
+import HealthAssessmentImage from '../../../../public/serviceswellnes.png';
 
 const services = [
   'Comprehensive wellness checks',

@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import MobileHealthcareVisit from '../../../../public/mobilehealthcare.png';
+import MobileHealthcareVisit from '../../../../public/mobilecare.png';
 
 const MobileConvenience = () => {
   return (
