@@ -762,7 +762,7 @@ export default function BookingPage() {
                     <Chip icon={<Videocam sx={{ fontSize: 16 }} />} label="Teleconsultation — Select an available time slot via Calendly" sx={{ bgcolor: '#e8f4fd', color: '#1a6fa0', fontWeight: 700, fontSize: '0.8rem', py: 2.5, px: 1.5, '& .MuiChip-icon': { color: '#1a6fa0' } }} />
                   </Box>
                   <Paper sx={{ bgcolor: 'white', p: { xs: 1, md: 4 }, borderRadius: 4, border: '1.5px solid #ededf5', overflow: 'hidden' }}>
-                    <CalendlyEmbed url="https://calendly.com/d/cxwc-525-qz7/new-meeting" />
+                    <CalendlyEmbed url="https://calendly.com/d/cys5-44x-y4h/meeting" />
                   </Paper>
                 </Box>
               ) : (
